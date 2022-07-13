@@ -20,7 +20,7 @@ Es un producto multiplataforma disponible para ser instalado sobre los sistemas 
 
 ### 3.1.1. Descarga de Anexos CAC
 
-En el módulo de Informes de Cuenta de Alto Costo ‘CAC’, al que se puede acceder siguiendo la ruta:  **Inicio > Parametrización > Estadísticas >** **Informes cuenta de alto costo > Reporte de Cáncer** Se habilita al momento de generar la información de la cuenta de alto costo en la pestaña **‘Resultados’**, el botón de **“Exportar Anexos”** mediante el cual se puede realizar la descarga de los anexos del paciente. Estos anexos serán los archivos de multimedia pertenecientes a cada paciente por el que se genere información de la cuenta de alto costo.
+En el módulo de Informes de Cuenta de Alto Costo ‘CAC’, al que se puede acceder siguiendo la ruta:  **Inicio > Parametrización > Estadísticas >** **Informes cuenta de alto costo > Reporte de Cáncer** Se habilita al momento de generar la información de la cuenta de alto costo en la pestaña **‘Resultados’**, el botón de **“Exportar Anexos”** mediante el cual se puede realizar la descarga de los anexos del paciente. Estos anexos serán los archivos de multimedia pertenecientes a cada paciente por el que se genere información de la cuenta de alto costo.  
 
 Al momento de presionar el botón **‘Exportar Anexos’**, el sistema realizara la descarga de un archivo comprimido nombrado **“[Fecha Inicio - Fin] - Entidad”** tomando para el nombre los parámetros para la generación de información, dentro de esta carpeta se tendrán subcarpetas nombradas **“[Tipo Identificación + Numero Identificación]”** esto de manera independiente para cada paciente por el que se genera información de la cuenta de alto costo; dentro de estas subcarpetas se tendrán los archivos de multimedia con los que cuente el paciente.
 
@@ -120,7 +120,13 @@ Por ejemplo para los módulos de inventarios de Facturas y de Remisiones se apli
 
 
 
+## 3.2. Versión 1.48.0.0
+
+### 3.2.1. Glucometrías:
+
+**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 
 
+![banner-mu-sured-siga Admin](Multimedia/v1.48.0.0/perros.jpg)
 
