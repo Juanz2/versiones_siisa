@@ -1,0 +1,595 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>SIISA Version</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><p><img src="Multimedia/Encabezado.png" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"></p><div class='md-toc' mdtype='toc'><p class="md-toc-content" role="list"><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n3"><a class="md-toc-inner" href="#1-generalidades">1. GENERALIDADES</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n4"><a class="md-toc-inner" href="#11-introducción">1.1. Introducción</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n6"><a class="md-toc-inner" href="#12-definiciones-siglas-y-abreviaturas">1.2. Definiciones, siglas y abreviaturas</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n7"><a class="md-toc-inner" href="#2-características-del-producto">2. CARACTERÍSTICAS DEL PRODUCTO</a></span><span role="listitem" class="md-toc-item md-toc-h1" data-ref="n9"><a class="md-toc-inner" href="#3-versiones">3. VERSIONES</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n10"><a class="md-toc-inner" href="#31-versión-14700">3.1. Versión 1.47.0.0</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n11"><a class="md-toc-inner" href="#311-descarga-de-anexos-cac">3.1.1. Descarga de Anexos CAC</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n17"><a class="md-toc-inner" href="#312-validaciones-configurables-datos-personales">3.1.2. Validaciones Configurables Datos Personales</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n32"><a class="md-toc-inner" href="#313-reporte-de-facturación-electrónica">3.1.3. Reporte de Facturación Electrónica</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n40"><a class="md-toc-inner" href="#314-integración-de-inventarios">3.1.4. Integración de Inventarios</a></span><span role="listitem" class="md-toc-item md-toc-h2" data-ref="n66"><a class="md-toc-inner" href="#32-versión-14800">3.2. Versión 1.48.0.0</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n67"><a class="md-toc-inner" href="#321-parametrización-de-servicios">3.2.1. Parametrización de Servicios</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n74"><a class="md-toc-inner" href="#322-parametrización-de-clasificaciones">3.2.2. Parametrización de Clasificaciones</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n81"><a class="md-toc-inner" href="#323-censo-de-módulos-especializados">3.2.3. Censo de Módulos Especializados</a></span><span role="listitem" class="md-toc-item md-toc-h3" data-ref="n89"><a class="md-toc-inner" href="#324-registro-de-servicios">3.2.4 Registro de Servicios</a></span></p></div><h1 id='1-generalidades'><span>1. GENERALIDADES</span></h1><h2 id='11-introducción'><span>1.1. Introducción</span></h2><p><span>El presente documento tiene como finalidad dar a conocer el consolidado de los cambios realizados al Sistema Integrado de Información en Salud - SIISA.</span></p><h2 id='12-definiciones-siglas-y-abreviaturas'><span>1.2. Definiciones, siglas y abreviaturas</span></h2><h1 id='2-características-del-producto'><span>2. CARACTERÍSTICAS DEL PRODUCTO</span></h1><p><span>Es un producto multiplataforma disponible para ser instalado sobre los sistemas operativos Windows, Linux, Unix, MacOS y Solaris, el cuál puede ser ejecutado en múltiples navegadores web (google chrome, mozilla firefox, opera, safari), desarrollado sobre el motor de base de datos Oracle Standard Edition con el Framework APEX, utilizando como su principal componente el lenguaje PL/SQL, por medio la herramienta SQL Developer para el ambiente de desarrollo integrado y la administración de la base de datos.</span></p><h1 id='3-versiones'><span>3. VERSIONES</span></h1><h2 id='31-versión-14700'><span>3.1. Versión 1.47.0.0</span></h2><h3 id='311-descarga-de-anexos-cac'><span>3.1.1. Descarga de Anexos CAC</span></h3><p><span>En el módulo de Informes de Cuenta de Alto Costo ‘CAC’, al que se puede acceder siguiendo la ruta:  </span><strong><span>Inicio &gt; Parametrización &gt; Estadísticas &gt;</span></strong><span> </span><strong><span>Informes cuenta de alto costo &gt; Reporte de Cáncer</span></strong><span> Se habilita al momento de generar la información de la cuenta de alto costo en la pestaña </span><strong><span>‘Resultados’</span></strong><span>, el botón de </span><strong><span>“Exportar Anexos”</span></strong><span> mediante el cual se puede realizar la descarga de los anexos del paciente. Estos anexos serán los archivos de multimedia pertenecientes a cada paciente por el que se genere información de la cuenta de alto costo.  </span></p><p><span>Al momento de presionar el botón </span><strong><span>‘Exportar Anexos’</span></strong><span>, el sistema realizara la descarga de un archivo comprimido nombrado </span><strong><span>“[Fecha Inicio - Fin] - Entidad”</span></strong><span> tomando para el nombre los parámetros para la generación de información, dentro de esta carpeta se tendrán subcarpetas nombradas </span><strong><span>“[Tipo Identificación + Numero Identificación]”</span></strong><span> esto de manera independiente para cada paciente por el que se genera información de la cuenta de alto costo; dentro de estas subcarpetas se tendrán los archivos de multimedia con los que cuente el paciente.</span></p><p>&nbsp;</p><p><img src="Multimedia/v1.47.0.0/anexos_cac.gif" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"></p><p>&nbsp;</p><h3 id='312-validaciones-configurables-datos-personales'><span>3.1.2. Validaciones Configurables Datos Personales</span></h3><p>&nbsp;</p><p><span>Para el formulario de Datos Personales se agregaron validaciones configurables “CF” para los definir la obligatoriedad de los campos del formulario, a estas validaciones se puede acceder siguiendo la ruta: </span></p><p><strong><span>• Inicio &gt; Parametrización &gt; Pacientes &gt; Validaciones </span></strong></p><p><span>Estas validaciones se encontrarán en la región de </span><strong><span>‘Validaciones Especificas’</span></strong><span>, y se pueden activar o inactivar para que el sistema realice el requerimiento de dichos campos al momento de realizar un registro o una modificación a un paciente.</span></p><p><img src="Multimedia/v1.47.0.0/validaciones_datos_personales.gif" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"></p><p>&nbsp;</p><p><span>De los campos del formulario, los siguientes se mantendrán como siempre requeridos y no se puede modificar su propiedad mediante las validaciones configurables: </span></p><p><span>o Tipo de Identificación. </span></p><p><span>o Número de Identificación. </span></p><p><span>o Nombre 1. </span></p><p><span>o Apellido 1. </span></p><p><span>o Teléfono(s). </span></p><p><span>o Entidad.</span></p><p>&nbsp;</p><h3 id='313-reporte-de-facturación-electrónica'><span>3.1.3. Reporte de Facturación Electrónica</span></h3><p><span>Descripción Para los módulos administrativos de Facturas (Facturas de Venta) y Notas Crédito a los que se accede de acuerdo a la siguiente ruta: </span></p><p><strong><span>• Facturas: Inicio &gt; Administrativo &gt; Facturación &gt; Facturas &gt; Botón Reportes. </span></strong></p><p><strong><span>• Notas Crédito. Inicio &gt; Administrativo &gt; Tesorería &gt; Notas &gt; Notas Crédito &gt; Botón Reportes. </span></strong></p><p><span>En estos módulos se agrega una nueva opción de reporte, mediante la cual se puede generar el arte grafico de los registros que son enviados a la DIAN, es decir, mediante estos reportes se puede obtener la factura o la nota crédito que se reporta a la DIAN por parte del proveedor tecnológico sin tener que realizar la búsqueda del registro en el portal que el proveedor haya definido para consultar la información y descargar el arte gráfico del registro. Esta nueva opción solo se mostrará cuando el registro ya se haya reportado a la DIAN electrónicamente, estos registros se pueden identificar cuando en la región visualizar de los módulos en la grilla de información la columna ‘Facturado Electrónicamente’ cuenten con el valor “SI”. </span></p><p><img src="Multimedia/v1.47.0.0/facturas_electronicas_notas.gif" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"></p><p>&nbsp;</p><p><span>Adicionalmente, para ambos módulos e incluyendo el módulo de Notas Debito se realiza la misma modificación de la nomenclatura de los botones, ya que se realiza la actualización del nombre del botón ‘Facturación Electrónica’ por </span><strong><span>‘Enviar Electrónicamente’</span></strong><span>.</span></p><h3 id='314-integración-de-inventarios'><span>3.1.4. Integración de Inventarios</span></h3><p><span>Para los módulos de Inventario y su funcionalidad se realizan las siguientes modificaciones: </span></p><p><strong><span>1. Cargar Información:</span></strong></p><p><span>En los módulos de Inventarios específicamente para los módulos donde el Tipo de Movimiento es ‘No Aplica’ se tendrá el campo ‘Cargar Desde’ en la región Administrar el cual filtrará por los módulos de los cuales se permita cargar registros o llevar la información a otro registro en el sistema; adicional a eso se tendrá un botón en la región de Detalles llamado ‘Cargar Información’ que al presionarse abrirá una ventana emergente del cual se permita seleccionar el registro a cargar en el módulo teniendo en cuenta lo seleccionado en el campo ‘Cargar Desde’. </span></p><p><span>El sistema solo mostrara los registros a cargar cuando estos a nivel de parámetros cuenten con la misma información como la Bodega y (El Proveedor o Paciente) por el que se genera el registro. </span></p><p><img src="Multimedia/v1.47.0.0/Inventarios_1.png" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"></p><p><span>Al momento de seleccionar el registro mediante el </span><strong><span>‘Cargar Información’</span></strong><span>, el sistema lleva el registro seleccionado como detalle al módulo, lo carga en la grilla e inhabilita los botones de la región Detalles, lo cual impide que se realice el anexo de otro detalle al registro del inventario al que se le cargo de otro módulo el detalle al momento de crearlo; si se requiere agregar otro detalle o modificar el que se cargó, eso se podrá realizar mediante la edición del registro en el módulo. </span></p><p><span>Este cambio aplica para los módulos definidos de Ordenes y Pedidos, teniendo en cuenta lo mencionado anteriormente como condición de que el módulo tenga como Tipo de Movimiento el valor de </span><strong><span>‘No Aplica’</span></strong><span>. </span></p><p><strong><span>2. Control de Pendientes:</span></strong></p><p><span>Teniendo en cuenta la funcionalidad de </span><strong><span>‘Cargar Información’</span></strong><span> donde se puede arrastrar la información entre distintos módulos de inventarios, se incluye la funcionalidad para controlar las actividades y sus cantidades para evitar que en los módulos de inventarios las cantidades superen los valores iniciales o la cantidad de existencia en inventarios. </span></p><p><span>Por ejemplo para los módulos de inventarios de Facturas y de Remisiones se aplica esta funcionalidad donde se permite cargar y llevar como detalles actividades con X cantidad y validar que la cantidad a entregar de la actividad no supere la cantidad existente en inventario; en caso de que se dejen actividades con cantidades pendientes el sistema permite que esta actividad se relacione en otro detalle pero lleva como cantidad a entregar la cantidad pendiente que haya quedado de detalles anteriores y valida que la cantidad a entregar del nuevo detalle no supere la cantidad pendiente (Existente en Inventarios) de la actividad. </span></p><p><strong><span>Ejemplos:</span></strong></p><ul><li><p><strong><span>Registro 1:</span></strong></p><p><strong><span>Actividad:</span></strong><span> TRASTUZUMAB (HERCEPTIN) X 440 MILIGRAMO(S) EN POLVO LIOFILIZADO (PBS) </span></p><p><strong><span>Cantidad: 2</span></strong><span> | Cantidad Entregada: </span><strong><span>1</span></strong><span> | Cantidad Pendiente: </span><strong><span>1</span></strong></p></li></ul><p><img src="Multimedia/v1.47.0.0/Inventarios_2.png" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"></p><ul><li><p><strong><span>Registro 2:</span></strong></p><p><strong><span>Actividad:</span></strong><span> TRASTUZUMAB (HERCEPTIN) X 440 MILIGRAMO(S) EN POLVO LIOFILIZADO (PBS) </span></p><p><strong><span>Cantidad: 1</span></strong><span> | Cantidad Entregada: </span><strong><span>1</span></strong><span> | Cantidad Pendiente: </span><strong><span>0</span></strong><span> </span></p></li></ul><p><img src="Multimedia/v1.47.0.0/Inventarios_3.png" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"></p><p>&nbsp;</p><p>&nbsp;</p><h2 id='32-versión-14800'><span>3.2. Versión 1.48.0.0</span></h2><h3 id='321-parametrización-de-servicios'><span>3.2.1. Parametrización de Servicios</span></h3><p><strong><span>Inicio &gt; Parametrización &gt; Servicios &gt; Administración de servicios</span></strong></p><p><span>Esta actualización permite realizar la selección del servicio en un solo campo de selección nombrado </span><strong><span>&quot;Clasificación&quot;</span></strong><span>  en el que se encuentran, Estancia, Glucometría, Hemoderivados, imágenes, laboratorios, medicamentos-esquemas, oxigeno, otros, también encontramos un campo de selección nombrado </span><strong><span>&quot;Conceptos&quot;</span></strong><span>, un campo numérico nombrado </span><strong><span>&quot;Nivel de servicio&quot;</span></strong><span> y un campo de selección nombrado </span><strong><span>&quot;Servicio en consulta&quot;</span></strong><span>.</span></p><p><span>En la ventana </span><strong><span>&quot;Visualizar&quot;</span></strong><span> el campo de la clasificación se verá reflejado en la columna </span><strong><span>&quot;Clasificación&quot;</span></strong><span>, en el cual aparecerá el servicio que haya sido seleccionado anteriormente.</span></p><p><img src="Multimedia/v1.48.0.0/Parametrizacion_de_servicios.gif" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"><span> </span></p><p>&nbsp;</p><p>&nbsp;</p><h3 id='322-parametrización-de-clasificaciones'><span>3.2.2. Parametrización de Clasificaciones</span></h3><p><strong><span>Inicio &gt; Parametrización &gt; Módulos Asistenciales Especializados &gt; Clasificaciones</span></strong></p><p><span>Este es un sistema nuevo permite la creación de clasificaciones en el módulo asistencial especializado, agregando campos como, </span><strong><span>&quot;Nombre, Abreviación, Color y Modulo Especializado&quot;</span></strong><span>, también se encontrará un campo nombrado </span><strong><span>&quot;Estado&quot;</span></strong><span>, en el cual se verá si el servicio esta activo.</span></p><p><span>El campo del color es un estilo de clasificación propio que se verá reflejado en el censo.</span></p><p><img src="Multimedia/v1.48.0.0/Parametrizacion_de_clasificaciones.gif" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"></p><p>&nbsp;</p><p>&nbsp;</p><h3 id='323-censo-de-módulos-especializados'><span>3.2.3. Censo de Módulos Especializados</span></h3><p><strong><span>Inicio &gt; Asistencial &gt; Censos &gt; (selecciona el censo que solicita consultar)</span></strong></p><p><span>En este módulo que nos permite ver los pacientes que se encuentran activos en el sistema en los diferentes servicios de atención del módulo especializado.</span></p><p><span>Se podrá visualizar información relacionada al paciente como, tipo de identificación, número de identificación, nombre del paciente, entidad aseguradora,entidad pagadora, información de la atención, número de admisión, numero de ingreso, lugar de atención, ubicación, la fecha de ingreso, estancia y el diagnóstico.</span></p><p><strong><span>En el módulo se podrán diferenciar los registros por colores según la clasificación realizada en la Parametrización de Clasificaciones.</span></strong></p><p><img src="Multimedia/v1.48.0.0/censo.gif" referrerpolicy="no-referrer" alt="banner-mu-sured-siga Admin"></p><p>&nbsp;</p><p>&nbsp;</p><h3 id='324-registro-de-servicios'><span>3.2.4 Registro de Servicios</span></h3></div></div>
+</body>
+</html>

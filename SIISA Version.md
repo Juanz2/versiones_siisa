@@ -122,11 +122,48 @@ Por ejemplo para los módulos de inventarios de Facturas y de Remisiones se apli
 
 ## 3.2. Versión 1.48.0.0
 
-### 3.2.1. Glucometrías:
+### 3.2.1. Parametrización de Servicios
 
-**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+**Inicio > Parametrización > Servicios > Administración de servicios**
+
+Esta actualización permite realizar la selección del servicio en un solo campo de selección nombrado **"Clasificación"**  en el que se encuentran, Estancia, Glucometría, Hemoderivados, imágenes, laboratorios, medicamentos-esquemas, oxigeno, otros, también encontramos un campo de selección nombrado **"Conceptos"**, un campo numérico nombrado **"Nivel de servicio"** y un campo de selección nombrado **"Servicio en consulta"**.
+
+En la ventana **"Visualizar"** el campo de la clasificación se verá reflejado en la columna **"Clasificación"**, en el cual aparecerá el servicio que haya sido seleccionado anteriormente.
+
+![banner-mu-sured-siga Admin](Multimedia/v1.48.0.0/Parametrizacion_de_servicios.gif) 
 
 
 
-![banner-mu-sured-siga Admin](Multimedia/v1.48.0.0/perros.jpg)
 
+
+### 3.2.2. Parametrización de Clasificaciones
+
+**Inicio > Parametrización > Módulos Asistenciales Especializados > Clasificaciones**
+
+Este es un sistema nuevo permite la creación de clasificaciones en el módulo asistencial especializado, agregando campos como, **"Nombre, Abreviación, Color y Modulo Especializado"**, también se encontrará un campo nombrado **"Estado"**, en el cual se verá si el servicio esta activo.
+
+El campo del color es un estilo de clasificación propio que se verá reflejado en el censo.
+
+![banner-mu-sured-siga Admin](Multimedia/v1.48.0.0/Parametrizacion_de_clasificaciones.gif)
+
+
+
+
+
+### 3.2.3. Censo de Módulos Especializados
+
+**Inicio > Asistencial > Censos > (selecciona el censo que solicita consultar)**
+
+En este módulo que nos permite ver los pacientes que se encuentran activos en el sistema en los diferentes servicios de atención del módulo especializado.
+
+Se podrá visualizar información relacionada al paciente como, tipo de identificación, número de identificación, nombre del paciente, entidad aseguradora,entidad pagadora, información de la atención, número de admisión, numero de ingreso, lugar de atención, ubicación, la fecha de ingreso, estancia y el diagnóstico.
+
+**En el módulo se podrán diferenciar los registros por colores según la clasificación realizada en la Parametrización de Clasificaciones.**
+
+![banner-mu-sured-siga Admin](Multimedia/v1.48.0.0/censo.gif)
+
+
+
+
+
+### 3.2.4 Registro de Servicios
