@@ -130,13 +130,13 @@ Esta actualización permite realizar la selección del servicio en un solo campo
 
 En la ventana **"Visualizar"** el campo de la clasificación se verá reflejado en la columna **"Clasificación"**, en el cual aparecerá el servicio que haya sido seleccionado anteriormente.
 
-![banner-mu-sured-siga Admin](Multimedia/v1.48.0.0/Parametrizacion_de_servicios.gif) 
+![banner-mu-sured-siga Admin](Multimedia/v1.48.0.0/Parametrizacion_de_servicios.gif )
 
 
 
 
 
-### 3.2.2. Parametrización de Clasificaciones
+### 3.2.2. Parametrización de Clasificaciones 
 
 **Inicio > Parametrización > Módulos Asistenciales Especializados > Clasificaciones**
 
@@ -167,3 +167,11 @@ Se podrá visualizar información relacionada al paciente como, tipo de identifi
 
 
 ### 3.2.4 Registro de Servicios
+
+**Inicio > Asistencial > Censos > (selecciona el censo que solicita consultar)**
+
+Al llegar a este punto Selecciona la lupa en el campo del paciente requerido y te llevará a otra sección, en esa sección diríjase a las pestañas en el siguiente orden **Hospitalización > Información de Atención > Módulo Especializado** en la pestaña "Módulo Especializado" deberá seleccionar la opción de **"Servicios"** seguidamente se desplegará la pestaña **"Servicios"** en ella deberá seleccionar el campo del servicio que se requiere y se desplegará otra pestaña y seleccionaremos la opción **"Registrar"** 
+
+Se podrán modificar campos para las fechas de inicio o de fin, la hora, entre otros, agregar interpretación y observaciones.
+
+![banner-mu-sured-siga Admin](Multimedia/v1.48.0.0/Registro_de_servicios.gif)
